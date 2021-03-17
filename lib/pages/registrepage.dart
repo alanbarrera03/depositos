@@ -4,103 +4,73 @@ class RegistrePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.yellow[800],
         body: Stack(children: <Widget>[
-      _background(context),
-    ]));
+          _buttonsHigh(context),
+          _backgroundRegistre(context),
+        ]));
   }
 }
 
-Widget _background(BuildContext context) {
+Widget _buttonsHigh(BuildContext context) {
+  return SafeArea(
+    child: Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              Container(child: Icon(Icons.arrow_back_rounded, size: 30)),
+              Container(
+                  child: Text(
+                'Registre',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+              )),
+            ],
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child: Column(
+              children: <Widget>[
+                Container(
+                    alignment: Alignment.topLeft,
+                    height: 35,
+                    // padding: EdgeInsets.all(20),
+                    child: (Text(
+                      'Sing In',
+                      style:
+                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    ))),
+                Container(
+                  alignment: Alignment.center,
+                  height: 90,
+                  // padding: EdgeInsets.all(15),
+                  child: Text(
+                    'Aplicación para que puedas encontrar cerca de tu ubicación '
+                    'Depósitos y tiendas dónde se vende cerveza en cualquier horario '
+                    'Y puedas alargar más la fiesta.',
+                    // softWrap: true,
+                    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+    ),
+  );
+}
+
+Widget _backgroundRegistre(BuildContext context) {
   return Column(mainAxisAlignment: MainAxisAlignment.end, children: [
     Container(
-      height: 350,
+      height: 500,
       decoration: BoxDecoration(
-          color: Colors.yellow[800],
+          color: Colors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
-      child: Container(
-          padding: EdgeInsets.all(25),
-          child: Row(
-            children: [
-              Expanded(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                      height: 80,
-                      padding: EdgeInsets.all(20),
-                      color: Colors.red,
-                      child: (Text(
-                        'Welcome',
-                        style: TextStyle(
-                            fontSize: 40, fontWeight: FontWeight.bold),
-                      ))),
-                  Container(
-                    height: 100,
-                    padding: EdgeInsets.all(15),
-                    color: Colors.green,
-                    child: Text(
-                      'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-                      'Alps. Situated 1,578 meters above sea level, it is one of the '
-                      'larger Alpine Lakes.',
-                      softWrap: true,
-                      style:
-                          TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                  Container(
-                    height: 100,
-                    padding: EdgeInsets.all(8),
-                    color: Colors.grey[800],
-                    child: Column(
-                      children: <Widget>[
-                        Row(
-                            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                height: 70,
-                                width: 160,
-                                padding: EdgeInsets.all(8),
-                                color: Colors.deepPurple,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        primary: Colors.white,
-                                        shape: StadiumBorder(),
-                                        elevation: 0),
-                                    child: Text(
-                                      'Sing in',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 22),
-                                    ),
-                                    onPressed: () =>
-                                        Navigator.pushNamed(context, 'home')),
-                              ),
-                              Container(
-                                height: 70,
-                                width: 160,
-                                padding: EdgeInsets.all(8),
-                                color: Colors.deepPurple,
-                                child: ElevatedButton(
-                                    style: ElevatedButton.styleFrom(
-                                        primary: Colors.white,
-                                        shape: StadiumBorder(),
-                                        elevation: 0),
-                                    child: Text(
-                                      'Sing up',
-                                      style: TextStyle(
-                                          color: Colors.black, fontSize: 22),
-                                    ),
-                                    onPressed: () =>
-                                        Navigator.pushNamed(context, 'home')),
-                              )
-                            ])
-                      ],
-                    ),
-                  )
-                ],
-              ))
-            ],
-          )),
     )
   ]);
 }

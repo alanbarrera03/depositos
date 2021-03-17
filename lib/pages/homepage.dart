@@ -34,7 +34,6 @@ Widget _background(BuildContext context) {
                   Container(
                       height: 80,
                       padding: EdgeInsets.all(20),
-                      color: Colors.red,
                       child: (Text(
                         'Welcome',
                         style: TextStyle(
@@ -43,11 +42,10 @@ Widget _background(BuildContext context) {
                   Container(
                     height: 100,
                     padding: EdgeInsets.all(15),
-                    color: Colors.green,
                     child: Text(
-                      'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese '
-                      'Alps. Situated 1,578 meters above sea level, it is one of the '
-                      'larger Alpine Lakes.',
+                      'Aplicación para que puedas encontrar cerca de tu ubicación '
+                      'Depósitos y tiendas dónde se vende cerveza en cualquier horario '
+                      'Y puedas alargar más la fiesta.',
                       softWrap: true,
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
@@ -56,7 +54,6 @@ Widget _background(BuildContext context) {
                   Container(
                     height: 100,
                     padding: EdgeInsets.all(8),
-                    color: Colors.grey[800],
                     child: Column(
                       children: <Widget>[
                         Row(
@@ -66,16 +63,15 @@ Widget _background(BuildContext context) {
                                 height: 70,
                                 width: 160,
                                 padding: EdgeInsets.all(8),
-                                color: Colors.deepPurple,
                                 child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
-                                        primary: Colors.white,
+                                        primary: Colors.black,
                                         shape: StadiumBorder(),
                                         elevation: 0),
                                     child: Text(
                                       'Sing in',
                                       style: TextStyle(
-                                          color: Colors.black, fontSize: 22),
+                                          color: Colors.white, fontSize: 22),
                                     ),
                                     onPressed: () =>
                                         Navigator.pushNamed(context, 'home')),
@@ -84,7 +80,6 @@ Widget _background(BuildContext context) {
                                 height: 70,
                                 width: 160,
                                 padding: EdgeInsets.all(8),
-                                color: Colors.deepPurple,
                                 child: ElevatedButton(
                                     style: ElevatedButton.styleFrom(
                                         primary: Colors.white,
@@ -95,8 +90,8 @@ Widget _background(BuildContext context) {
                                       style: TextStyle(
                                           color: Colors.black, fontSize: 22),
                                     ),
-                                    onPressed: () =>
-                                        Navigator.pushNamed(context, 'home')),
+                                    onPressed: () => Navigator.pushNamed(
+                                        context, 'registro')),
                               )
                             ])
                       ],
