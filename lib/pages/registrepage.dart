@@ -1,4 +1,6 @@
+import 'package:depositos/pages/homepage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class RegistrePage extends StatelessWidget {
   @override
@@ -21,12 +23,39 @@ Widget _buttonsHigh(BuildContext context) {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
-              Container(child: Icon(Icons.arrow_back_rounded, size: 30)),
               Container(
-                  child: Text(
-                'Registre',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-              )),
+                  child: FloatingActionButton(
+                      child: Icon(
+                        Icons.arrow_back_rounded,
+                        color: Colors.black,
+                        size: 30,
+                      ),
+                      backgroundColor: Colors.yellow[800],
+                      elevation: 0.0,
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      })),
+              Container(
+                child: ElevatedButton(
+                    child: Text(
+                      'Registre',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w600),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.yellow[800],
+                        shape: StadiumBorder(),
+                        elevation: 0),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => HomePage()));
+                    }),
+              ),
             ],
           ),
           Padding(
@@ -71,6 +100,100 @@ Widget _backgroundRegistre(BuildContext context) {
           color: Colors.white,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(40), topRight: Radius.circular(40))),
-    )
+      child: Padding(
+        padding: EdgeInsets.all(15.0),
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.all(8),
+                child: TextField(
+                    autofocus: false,
+                    style: TextStyle(fontSize: 20.0, color: Color(0xFFbdc6cf)),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[150],
+                      hintText: 'Username',
+                      contentPadding: const EdgeInsets.only(
+                          left: 14.0, bottom: 8.0, top: 8.0),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(25.7),
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.white),
+                        borderRadius: new BorderRadius.circular(25.7),
+                      ),
+                    )),
+              ),
+              Container(
+                padding: EdgeInsets.all(8),
+                child: TextField(
+                    autofocus: false,
+                    style: TextStyle(fontSize: 20.0, color: Color(0xFFbdc6cf)),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[150],
+                      hintText: 'Email',
+                      contentPadding: const EdgeInsets.only(
+                          left: 14.0, bottom: 8.0, top: 8.0),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(25.7),
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.white),
+                        borderRadius: new BorderRadius.circular(25.7),
+                      ),
+                    )),
+              ),
+              Container(
+                padding: EdgeInsets.all(8),
+                child: TextField(
+                    autofocus: false,
+                    style: TextStyle(fontSize: 20.0, color: Color(0xFFbdc6cf)),
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.grey[150],
+                      hintText: 'Password',
+                      contentPadding: const EdgeInsets.only(
+                          left: 14.0, bottom: 8.0, top: 8.0),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(25.7),
+                      ),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: new BorderSide(color: Colors.white),
+                        borderRadius: new BorderRadius.circular(25.7),
+                      ),
+                    )),
+              ),
+              Container(
+                child: TextButton(
+                  child: Text('Forgot'),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  width: 400,
+                  height: 50,
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          primary: Colors.black,
+                          shape: StadiumBorder(),
+                          elevation: 0),
+                      child: Text(
+                        'Sing in',
+                        style: TextStyle(color: Colors.white, fontSize: 22),
+                      ),
+                      onPressed: () => Navigator.pushNamed(context, 'home')),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    ),
   ]);
 }
