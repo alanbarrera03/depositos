@@ -170,6 +170,7 @@ Widget _backgroundRegistre(BuildContext context) {
               ),
               Container(
                 child: TextButton(
+                  onPressed: () {},
                   child: Text('Forgot'),
                 ),
               ),
