@@ -1,4 +1,5 @@
 import 'package:depositos/pages/homepage.dart';
+import 'package:depositos/pages/searchpage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -52,8 +53,10 @@ Widget _buttonsHigh(BuildContext context) {
                         shape: StadiumBorder(),
                         elevation: 0),
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SearchPage()));
                     }),
               ),
             ],

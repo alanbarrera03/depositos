@@ -1,3 +1,4 @@
+import 'package:depositos/pages/searchpage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:depositos/pages/homepage.dart';
@@ -12,7 +13,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Depósitos',
       initialRoute: 'home',
-      routes: {'home': (_) => HomePage(), 'registro': (_) => RegistrePage()},
+      routes: {
+        'home': (_) => HomePage(),
+        'registro': (_) => RegistrePage(),
+        'buscar': (_) => SearchPage()
+      },
     );
   }
 }
